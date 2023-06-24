@@ -1,0 +1,92 @@
+.header-section {
+    background-color: #cad8d1;
+}
+.title-container {
+    display: flex;
+    margin-top: 10px;
+    height: 150vh;
+    background-color: #d7fbff;
+    gap: 30px;
+}
+
+.coding-foto {
+    width: 350px;
+    top: 200px;
+    margin-right: 130%;
+    position: relative; 
+
+    animation-name: example;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    }
+    
+    @keyframes example {
+        0% {top: 20%;}
+       50% {top: 23%;}
+       100% {top: 20%;}
+    }
+
+
+.coding-intro {
+    margin-left: 20%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 50px;
+    max-width: 40%;
+    padding-top: 10%;
+    font-weight: 100;
+}
+
+.intro-p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    padding: 0%;
+    margin: 0%;
+
+}
+
+@media (max-width: 1215px) {
+    .title-container {
+        display: flex;
+        flex-direction: column;
+        /* margin-top: 10px; */
+        height: 80vh;
+        background-color: #d7fbff;
+        /* gap: 30px; */
+        /* padding: 0; */
+    }
+
+    .coding-intro {
+        font-family: 'Press Start 2P', cursive;
+        font-size: 30px;
+        font-weight: 100;
+        width: 300px;
+        margin: auto;
+        width: auto;
+        min-width: 350px;
+    }
+
+    .intro-p {
+        font-family: "Montserrat", sans-serif;
+        font-size: 20px;
+        font-weight: 200;
+    }
+
+    .coding-foto {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        position: relative;
+        top: unset;
+        margin: auto;
+
+        animation-name: example;
+        animation-duration: 0s;
+        animation-iteration-count: infinite;
+    }
+
+}
