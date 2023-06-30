@@ -1,0 +1,37 @@
+#red {
+    color: red;
+
+
+}
+
+#blue {
+    color: blue;
+
+}
+
+#orange {
+    color: orange;
+
+
+}
+
+#green {
+    color: green;
+
+}
+
+#yellow {
+    color: yellow;
+
+
+}
+/* class secltor */
+.color-title {
+    font-weight: normal;
+}
+
+/* attribute selector */
+img {
+    height: 200px;
+    width: 200px;
+}
