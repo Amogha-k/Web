@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Capture the change event of category checkboxes
+      $("input[type='checkbox']").on("change", function() {
+        var selectedCategories = [];
+        
+        // Loop through all selected checkboxes and store their values
+        $("input[type='checkbox']:checked").each(function() {
+          selectedCategories.push($(this).val());
+        });
+        
+        // If no categories are selected, show all products; otherwise, filter products
+        if (selectedCategories.length === 0) {
+          $(".product").show();
+        } else {
+          $(".product").hide(); // Hide all products initially
+          selectedCategories.forEach(function(category) {
+            $("." + category).show(); // Show products with the selected category
+          });
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <div>
+    <label><input type="checkbox" value="category1"> Category 1</label>
+    <label><input type="checkbox" value="category2"> Category 2</label>
+    <label><input type="checkbox" value="category3"> Category 3</label>
+  </div>
+  
+  <div class="product category1">Product A (Category 1)</div>
+  <div class="product category2">Product B (Category 2)</div>
+  <div class="product category1">Product C (Category 1)</div>
+  <div class="product category3">Product D (Category 3)</div>
+  <!-- Add more product elements with appropriate classes -->
+</body>
+</html>

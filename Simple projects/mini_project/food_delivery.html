@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Food Delivery Website</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Click event for menu panels
+            $(".menu-panel").click(function () {
+                $(this).find(".food-items").slideToggle();
+            });
+        });
+    </script>
+    <style>
+        .menu-panel {
+            background-color: #f1f1f1;
+            cursor: pointer;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .food-items {
+            display: none;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Food Delivery Website</h2>
+    <div class="menu-panel">
+        <h3>Panel 1</h3>
+        <div class="food-items">
+            <ul>
+                <li>Food Item 1</li>
+                <li>Food Item 2</li>
+                <li>Food Item 3</li>
+            </ul>
+        </div>
+    </div>
+    <div class="menu-panel">
+        <h3>Panel 2</h3>
+        <div class="food-items">
+            <ul>
+                <li>Food Item 4</li>
+                <li>Food Item 5</li>
+                <li>Food Item 6</li>
+            </ul>
+        </div>
+    </div>
+    <div class="menu-panel">
+        <h3>Panel 3</h3>
+        <div class="food-items">
+            <ul>
+                <li>Food Item 7</li>
+                <li>Food Item 8</li>
+                <li>Food Item 9</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

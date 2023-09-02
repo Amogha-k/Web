@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Interactive Quiz Application</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Click event for answer options
+            $(".answer-option").click(function () {
+                // Add fading effect using fadeIn() function
+                $(this).addClass("selected").fadeIn();
+            });
+            // Click event for "Reveal Answer" button
+            $("#reveal-answer").click(function () {
+                // Toggle visibility with fading effect using fadeToggle() function
+                $(".correct-answer").fadeToggle();
+            });
+        });
+    </script>
+    <style>
+        .selected {
+            background-color: yellow;
+            /* Add additional CSS properties for the fade effect */
+        }
+
+        .correct-answer {
+            display: none;
+            color: green;
+            /* Add additional CSS properties for the correct answer style */
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Quiz Application</h2>
+    <h3>Question 1</h3>
+    <ul>
+        <li class="answer-option">Option 1</li>
+        <li class="answer-option">Option 2</li>
+        <li class="answer-option">Option 3</li>
+        <li class="answer-option correct-answer">Option 3 (Correct Answer)</li>
+    </ul>
+    <button id="reveal-answer">Reveal Answer</button>
+</body>
+
+</html>

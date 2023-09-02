@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Food Delivery Service</title>
+ <script>
+ function validateForm() {
+ // Get form inputs
+ var address = document.getElementById("address").value;
+ var dishes = 
+document.querySelectorAll('input[name="dishes[]"]:checked');
+ var instructions = document.getElementById("instructions").value;
+ 
+ // Validate address
+ if (address === "") {
+ alert("Please enter your delivery address.");
+ return false;
+ }
+ 
+ // Validate dish selection
+ if (dishes.length === 0) {
+ alert("Please select at least one dish.");
+ return false;
+ }
+ 
+ // Display order details
+ var orderDetails = "Order details:\n\n";
+ orderDetails += "Delivery Address: " + address + "\n";
+ orderDetails += "Selected Dishes:\n";
+ for (var i = 0; i < dishes.length; i++) {
+ orderDetails += "- " + dishes[i].value + "\n";
+ }
+ orderDetails += "Special Instructions: " + instructions;
+ 
+ // Show confirmation message
+ alert(orderDetails);
+ 
+ }
+ </script>
+</head>
+<body>
+ <h1>Food Delivery Service</h1>
+ 
+ <form id="orderForm">
+ <label for="address">Delivery Address:</label>
+ <input type="text" id="address" name="address" required><br><br>
+ 
+ <label for="dishes">Select Dishes:</label><br>
+ <input type="checkbox" name="dishes[]" value="Dish 1"> Poori<br>
+ <input type="checkbox" name="dishes[]" value="Dish 2"> Dosa <br>
+ <input type="checkbox" name="dishes[]" value="Dish 3"> Pongal<br><br>
+ 
+ <label for="instructions">Special Instructions:</label><br>
+ <textarea id="instructions" name="instructions" rows="4" 
+cols="50"></textarea><br><br>
+ 
+ <input type="button" value="Place Order" onclick="validateForm()">
+ </form>
+</body>
+</html>

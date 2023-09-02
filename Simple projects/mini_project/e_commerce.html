@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>E-commerce Website</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Change event for category filters
+            $(".category-filter").change(function () {
+                var selectedCategories = [];
+                // Retrieve the selected category value(s)
+                $(".category-filter option:selected").each(function () {
+                    selectedCategories.push($(this).val());
+                });
+                // Show or hide products based on the selected category value(s)
+                $(".product").each(function () {
+                    var productCategories = $(this).data("categories").split(" ");
+                    if (selectedCategories.length === 0 || $.inArray(productCategories,
+                        selectedCategories) !== -1) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+        });
+    </script>
+    <style>
+        .product {
+            display: none;
+            /* Add other necessary styles */
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Product Listing</h2>
+    <div class="filters">
+        <label for="category1">Category 1</label>
+        <input type="checkbox" class="category-filter" id="category1" value="category1">
+        <br>
+        <label for="category2">Category 2</label>
+        <input type="checkbox" class="category-filter" id="category2" value="category2">
+        <br>
+        <label for="category3">Category 3</label>
+        <input type="checkbox" class="category-filter" id="category3" value="category3">
+    </div>
+    <div class="product-listing">
+        <div class="product" data-categories="category1 category3">
+            <h3>Product 1</h3>
+            <p>Description</p>
+        </div>
+        <div class="product" data-categories="category2">
+            <h3>Product 2</h3>
+            <p>Description</p>
+        </div>
+        <div class="product" data-categories="category1">
+            <h3>Product 3</h3>
+            <p>Description</p>
+        </div>
+    </div>
+</body>
+</html>

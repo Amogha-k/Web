@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Council Election Voting</title>
+    <style>
+        .candidate {
+            margin-bottom: 10px;
+        }
+
+        .candidate label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .confirmation {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .confirmation.success {
+            color: green;
+        }
+
+        .confirmation.failure {
+            color: red;
+        }
+    </style>
+    <script>
+        // Handle vote submission
+        function submitVote() {
+            var candidateInputs = document.getElementsByName("candidate");
+            var selectedCandidate = null;
+
+            for (var i = 0; i < candidateInputs.length; i++) {
+                if (candidateInputs[i].checked) {
+                    selectedCandidate = candidateInputs[i];
+                    break;
+                }
+            }
+
+            if (selectedCandidate) {
+                var candidateName = selectedCandidate.value;
+                var confirmationMessage = "You have voted for: " + candidateName;
+                var confirmationElement =
+                    document.getElementById("confirmation");
+
+                confirmationElement.textContent = confirmationMessage;
+                confirmationElement.className = "confirmation success";
+            } else {
+                var confirmationElement =
+                    document.getElementById("confirmation");
+
+                confirmationElement.textContent = "Please select a candidate.";
+                confirmationElement.className = "confirmation failure";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Student Council Election Voting</h1>
+
+    <div class="candidate">
+        <input type="radio" name="candidate" id="candidate1" value="Candidate 1">
+        <label for="candidate1">Candidate 1</label>
+    </div>
+
+    <div class="candidate">
+        <input type="radio" name="candidate" id="candidate2" value="Candidate 2">
+        <label for="candidate2">Candidate 2</label>
+    </div>
+
+    <div class="candidate">
+        <input type="radio" name="candidate" id="candidate3" value="Candidate 3">
+        <label for="candidate3">Candidate 3</label>
+    </div>
+
+    <button onclick="submitVote()">Vote</button>
+
+    <div id="confirmation"></div>
+</body>
+
+</html>
